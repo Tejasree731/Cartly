@@ -2,6 +2,9 @@ import express from "express";
 import cors from "cors";
 import prisma from "./config/prisma.js";
 import productRoutes from "./routes/product.routes.js";
+import categoryRoutes from "./routes/category.routes.js";
+import supplierRoutes from "./routes/supplier.routes.js";
+import forecastRoutes from "./routes/forecast.routes.js";
 
 const app = express();
 
@@ -31,6 +34,9 @@ app.get("/api/health", async (req, res) => {
 });
 
 app.use("/api/products", productRoutes);
+app.use("/api/categories", categoryRoutes);
+app.use("/api/suppliers", supplierRoutes);
+app.use("/api/forecast", forecastRoutes);
 
 app.use((req, res) => {
   res.status(404).json({
