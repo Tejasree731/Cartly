@@ -90,5 +90,5 @@ model SaleItem {
   product Product @relation(fields: [productId], references: [id], onDelete: Restrict)
 
   @@index([productId])
-  @@map("sale_items")
+  @@map("sale_items") 
 }
